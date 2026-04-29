@@ -29,6 +29,7 @@ namespace Paleta
             ro.Content = r.Value;
             go.Content = g.Value;
             bo.Content = b.Value;
+            Clipboard.SetText(r.Value + ", " + g.Value + ", " + b.Value);
         }
 
         private void Change(object sender, RoutedEventArgs e)
