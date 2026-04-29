@@ -5,17 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Paleta"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Color x:Key="blue">#00FFbb</Color>
-        <SolidColorBrush x:Key="SCB" Color="#00FFbb"></SolidColorBrush>
-        <LinearGradientBrush x:Key="gradient" StartPoint="1,0" EndPoint="0,1">
-            <GradientStop Color="Yellow" Offset="2"></GradientStop>
-            <GradientStop Color="Gray"></GradientStop>
-        </LinearGradientBrush>
-    </Window.Resources>
+        Title="Wzornik Kolorów" Height="450" Width="800"
+        Background="Cornsilk">
     <StackPanel>
-        <Button Background="{StaticResource ResourceKey=SCB}" x:Name="b1" Click="b1_Click">first</Button>
-        <Button Background="{StaticResource ResourceKey=gradient}" Height="100" x:Name="b2">second</Button>
+        <Rectangle Width="600" Height="100" x:Name="test" Fill="#fff"></Rectangle>
+        <TextBlock>Dobierz kolor suwakami i zapisz przyciskiem</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <Label>R</Label>
+            <Slider Minimum="0" Maximum="255" x:Name="r" ValueChanged="Change" Width="600" Value="255"></Slider>
+            <Label x:Name="ro"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>G</Label>
+            <Slider Minimum="0" Maximum="255" x:Name="g" ValueChanged="Change" Width="600" Value="255"></Slider>
+            <Label x:Name="go"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>B</Label>
+            <Slider Minimum="0" Maximum="255" x:Name="b" ValueChanged="Change" Width="600" Value="255"></Slider>
+            <Label x:Name="bo"></Label>
+        </StackPanel>
+
+        <Button Background="Peru" Width="200" x:Name="b1" Click="Download">Download</Button>
+        <TextBlock Background="#fff" Width="200" x:Name="output">255, 255, 255</TextBlock>
     </StackPanel>
 </Window>

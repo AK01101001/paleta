@@ -16,14 +16,30 @@ namespace Paleta
     /// </summary>
     public partial class MainWindow : Window
     {
+        Color color;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void b1_Click(object sender, RoutedEventArgs e)
+        private void Download(object sender, RoutedEventArgs e)
         {
-            b1.Background = new SolidColorBrush(Color.FromRgb(255, 255, 00));
+            output.Background = new SolidColorBrush(color);
+            output.Text = r.Value + ", " + g.Value + ", " + b.Value;
+            ro.Content = r.Value;
+            go.Content = g.Value;
+            bo.Content = b.Value;
+        }
+
+        private void Change(object sender, RoutedEventArgs e)
+        {
+            if (r!=null&& g != null && b != null)
+            {
+                color = Color.FromRgb((byte)r.Value, (byte)g.Value, (byte)b.Value);
+                test.Fill = new SolidColorBrush(color);
+            }
+            
+
         }
     }
 }
